@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ad Config JSON Response</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Roboto, "Segoe UI", sans-serif; margin: 24px; }
+    pre { background:#0b0b0b; color:#dff0ff; padding:16px; border-radius:8px; overflow:auto; }
+    .controls { margin-bottom:12px; }
+    button { margin-right:8px; padding:8px 12px; }
+  </style>
+</head>
+<body>
+  <h1>Ad Config JSON Response</h1>
+  <div class="controls">
+    <button id="copyBtn">Copy JSON</button>
+    <button id="downloadBtn">Download .json</button>
+  </div>
+  <pre id="jsonBlock" aria-label="ad-config-json"></pre>
+
+  <script>
+    // The JSON response to show
+    const data = {
+        "app_open_ads": [
+            {
+                "ad_id": "ca-app-pub-4731007495868109/1807764121",
+                "priority": 1,
+                "ad_provider": "google"
+            },
+            {
+                "ad_id": "/21753324030,23214451272/com.infinitytechnolabs.rtoexam_AppOpen",
+                "priority": 2,
+                "ad_provider": "google"
+            }
+        ],
+        "banner_ads": [
+            {
+                "ad_id": "ca-app-pub-4731007495868109/7742617084",
+                "priority": 2,
+                "ad_provider": "google"
+            },
+            {
+                "ad_id": "/21753324030,23214451272/com.infinitytechnolabs.rtoexam_Banner",
+                "priority": 3,
+                "ad_provider": "google"
+            }
+        ],
+        "interstitial_ads": [
+            {
+                "ad_id": "ca-app-pub-4731007495868109/1939626065",
+                "priority": 2,
+                "ad_provider": "google"
+            },
+            {
+                "ad_id": "/21753324030,23214451272/com.infinitytechnolabs.rtoexam_Interstitial",
+                "priority": 3,
+                "ad_provider": "google"
+            }
+        ],
+        "native_banner_ads": [
+            {
+                "ad_id": "ca-app-pub-4731007495868109/6068869923",
+                "priority": 1,
+                "ad_provider": "google"
+            },
+            {
+                "ad_id": "/21753324030,23214451272/com.infinitytechnolabs.rtoexam_Native",
+                "priority": 2,
+                "ad_provider": "google"
+            }
+        ],
+        "native_medium_ads": [
+            {
+                "ad_id": "ca-app-pub-4731007495868109/3906112143",
+                "priority": 1,
+                "ad_provider": "google"
+            },
+            {
+                "ad_id": "/21753324030,23214451272/com.infinitytechnolabs.rtoexam_Native",
+                "priority": 2,
+                "ad_provider": "google"
+            }
+        ],
+        "adConfigs": {
+            "forward_count": 3,
+            "backward_count": 3,
+            "adapter_count": 3,
+            "new_app": "",
+            "privacy": "",
+            "a_version": 0,
+            "i_version": 0,
+            "splash_seconds": 5,
+            "ad_seconds_gap": 10,
+            "inter_preload": true,
+            "app_open_after_url": false
+        },
+        "appConfigs": {}
+    };
+
+    const jsonBlock = document.getElementById('jsonBlock');
+    jsonBlock.textContent = JSON.stringify(data, null, 4);
+
+    document.getElementById('copyBtn').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(JSON.stringify(data));
+        alert('JSON copied to clipboard');
+      } catch (e) {
+        alert('Copy failed: ' + e);
+      }
+    });
+
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+      const blob = new Blob([JSON.stringify(data, null, 4)], {type: 'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'ad_config_response.json';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+  </script>
+</body>
+</html>

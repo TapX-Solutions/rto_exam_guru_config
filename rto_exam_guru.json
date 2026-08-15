@@ -1,0 +1,76 @@
+{
+    "app_open_ads": [
+        {
+            "ad_id": "ca-app-pub-4731007495868109/1807764121",
+            "priority": 1,
+            "ad_provider": "google"
+        },
+        {
+            "ad_id": "/21753324030,23214451272/com.infinitytechnolabs.rtoexam_AppOpen",
+            "priority": 2,
+            "ad_provider": "google"
+        }
+    ],
+    "banner_ads": [
+        {
+            "ad_id": "ca-app-pub-4731007495868109/7742617084",
+            "priority": 2,
+            "ad_provider": "google"
+        },
+        {
+            "ad_id": "/21753324030,23214451272/com.infinitytechnolabs.rtoexam_Banner",
+            "priority": 3,
+            "ad_provider": "google"
+        }
+    ],
+    "interstitial_ads": [
+        {
+            "ad_id": "ca-app-pub-4731007495868109/1939626065",
+            "priority": 2,
+            "ad_provider": "google"
+        },
+        {
+            "ad_id": "/21753324030,23214451272/com.infinitytechnolabs.rtoexam_Interstitial",
+            "priority": 3,
+            "ad_provider": "google"
+        }
+    ],
+    "native_banner_ads": [
+        {
+            "ad_id": "ca-app-pub-4731007495868109/6068869923",
+            "priority": 1,
+            "ad_provider": "google"
+        },
+        {
+            "ad_id": "/21753324030,23214451272/com.infinitytechnolabs.rtoexam_Native",
+            "priority": 2,
+            "ad_provider": "google"
+        }
+    ],
+    "native_medium_ads": [
+        {
+            "ad_id": "ca-app-pub-4731007495868109/3906112143",
+            "priority": 1,
+            "ad_provider": "google"
+        },
+        {
+            "ad_id": "/21753324030,23214451272/com.infinitytechnolabs.rtoexam_Native",
+            "priority": 2,
+            "ad_provider": "google"
+        }
+    ],
+    "adConfigs": {
+        "forward_count": 3,
+        "backward_count": 3,
+        "adapter_count": 3,
+        "new_app": "",
+        "privacy": "",
+        "a_version": 0,
+        "i_version": 0,
+        "splash_seconds": 5,
+        "ad_seconds_gap": 10,
+        "inter_preload": true,
+        "app_open_after_url": false
+    },
+    "appConfigs": {}
+}
